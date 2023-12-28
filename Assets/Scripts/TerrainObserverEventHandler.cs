@@ -9,7 +9,7 @@ public class TerrainObserverEventHandler : DefaultObserverEventHandler
     private GameObject player;
     private Rigidbody playerRigidbody;
 
-    protected virtual void Start()
+     protected override void Start()
     {
         base.Start();
 
