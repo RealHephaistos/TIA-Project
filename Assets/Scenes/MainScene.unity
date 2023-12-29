@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
-  m_Sun: {fileID: 705507994}
+  m_Sun: {fileID: 0}
   m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
@@ -389,7 +389,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.02, z: 0}
-  m_LocalScale: {x: 0.03, y: 0.03, z: 0.03}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1716157705}
@@ -790,11 +790,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1716157705}
   - component: {fileID: 1716157704}
-  - component: {fileID: 1716157706}
   - component: {fileID: 1716157707}
+  - component: {fileID: 1716157706}
   m_Layer: 0
   m_Name: TerrainTarget
-  m_TagString: Untagged
+  m_TagString: ImageTarget
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -814,13 +814,13 @@ MonoBehaviour:
   PreviewVisible: 1
   RuntimeOcclusion: 0
   RuntimeCollider: 0
-  mTrackableName: terrain
+  mTrackableName: Terrain
   mInitializedInEditor: 1
   mDataSetPath: 
   mAspectRatio: 1
   mImageTargetType: 3
-  mWidth: 0.2
-  mHeight: 0.2
+  mWidth: 1
+  mHeight: 1
   mRuntimeTexture: {fileID: 2800000, guid: 47bffd67681b0024a8ccf8ccdf44694c, type: 3}
   mMotionHint: 1
   mTrackingOptimization: 0
@@ -852,7 +852,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1716157702}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 027a5d8adddf64d4bbf257424bed67dc, type: 3}
+  m_Script: {fileID: 11500000, guid: 886328de6a5c14cbb85854fdf1a5085b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   StatusFilter: 2
@@ -901,7 +901,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mObserverBehaviour: {fileID: 1716157704}
   mHiddenRoot: {fileID: 0}
-  mTargetName: terrain
+  mTargetName: Terrain
   mDatasetName: 
   mCastedBehaviour: {fileID: 1716157704}
   mMeshFilter: {fileID: 0}
@@ -1203,8 +1203,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.1, z: 0}
-  m_LocalScale: {x: 0.04, y: 0.04, z: 0.04}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1716157705}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1248,7 +1248,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   leanJoystick: {fileID: 1910363237}
-  moveSpeed: 0.01
+  moveSpeed: 1
 --- !u!1 &1984371038
 GameObject:
   m_ObjectHideFlags: 0
