@@ -13,6 +13,8 @@ public class PlayerControls : MonoBehaviour
     [SerializeField] private float friction;
     private Rigidbody rb;
 
+    private Camera mainCamera;
+
     // True if the start game button has been pressed
     private bool isGameRunning = false;
 
@@ -21,6 +23,8 @@ public class PlayerControls : MonoBehaviour
     {
         leanJoystickScript = leanJoystick.GetComponent<LeanJoystick>();
         rb = GetComponent<Rigidbody>();
+
+        mainCamera = Camera.main;
     }
 
     // Update is called once per frame
@@ -31,7 +35,7 @@ public class PlayerControls : MonoBehaviour
             // Add force to the player in the direction of the joystick
             Vector3 movement = new Vector3(leanJoystickScript.ScaledValue.x, 0, leanJoystickScript.ScaledValue.y);
             // Ajust the movement vector relative to the camera
-            movement = Camera.main.transform.TransformDirection(movement);
+            movement = mainCamera.transform.TransformDirection(movement);
             rb.AddForce(movement * moveSpeed);
 
             // Apply friction to the player
