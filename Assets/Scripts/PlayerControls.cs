@@ -13,6 +13,9 @@ public class PlayerControls : MonoBehaviour
     [SerializeField] private float friction;
     private Rigidbody rb;
 
+    // True if the start game button has been pressed
+    private bool isGameRunning = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,14 +26,53 @@ public class PlayerControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Add force to the player in the direction of the joystick
-        Vector3 movement = new Vector3(leanJoystickScript.ScaledValue.x, 0, leanJoystickScript.ScaledValue.y);
-        // Ajust the movement vector relative to the camera
-        movement = Camera.main.transform.TransformDirection(movement);
-        rb.AddForce(movement * moveSpeed);
+        if(Physics.Raycast(transform.position, Vector3.down, 0.1f))
+        {
+            // Add force to the player in the direction of the joystick
+            Vector3 movement = new Vector3(leanJoystickScript.ScaledValue.x, 0, leanJoystickScript.ScaledValue.y);
+            // Ajust the movement vector relative to the camera
+            movement = Camera.main.transform.TransformDirection(movement);
+            rb.AddForce(movement * moveSpeed);
 
-        // Apply friction to the player
-        rb.velocity *= friction;
-        rb.angularVelocity *= friction;
+            // Apply friction to the player
+            rb.velocity *= friction;
+            rb.angularVelocity *= friction;
+        }
+    }
+
+    public void OnTerrainFound()
+    {
+        if(isGameRunning)
+        {
+            // Enable the joystick
+            leanJoystick.SetActive(true);
+
+            // Enable the player
+            this.gameObject.SetActive(true);
+
+            // Set the player kinematic to false
+            rb.isKinematic = false;
+        }
+        
+    }
+
+    public void OnTerrainLost()
+    {
+        if(isGameRunning)
+        {
+            // Disable the joystick
+            leanJoystick.SetActive(false);
+
+            // Disable the player
+            this.gameObject.SetActive(false);
+
+            // Set the player kinematic to true
+            rb.isKinematic = true;
+        }
+    }
+
+    public void SetGameState(bool state)
+    {
+        isGameRunning = state;
     }
 }
