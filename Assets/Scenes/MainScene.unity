@@ -2663,7 +2663,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   leanJoystick: {fileID: 1910363237}
-  moveSpeed: 1.9
+  moveSpeed: 1.36
   friction: 0.995
 --- !u!54 &1709635832
 Rigidbody:
@@ -3413,17 +3413,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 824c9c4e8e0299940ba429beb1233d65,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.03
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 824c9c4e8e0299940ba429beb1233d65,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.03
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 824c9c4e8e0299940ba429beb1233d65,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.03
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 824c9c4e8e0299940ba429beb1233d65,
         type: 3}
