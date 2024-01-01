@@ -30,8 +30,7 @@ public class StartGame : MonoBehaviour
         }
         else
         {
-            playerControls.SetGameState(true);
-            player.SetActive(true);
+            playerControls.ResetPlayer();
             joystick.SetActive(true);
             this.gameObject.SetActive(false);
             errorText.text = "";

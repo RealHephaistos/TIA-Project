@@ -15,6 +15,8 @@ public class PlayerControls : MonoBehaviour
 
     private Camera mainCamera;
 
+    [SerializeField] private GameObject playerSpawn;
+
     // True if the start game button has been pressed
     private bool isGameRunning = false;
 
@@ -78,5 +80,13 @@ public class PlayerControls : MonoBehaviour
     public void SetGameState(bool state)
     {
         isGameRunning = state;
+    }
+
+    public void ResetPlayer()
+    {
+        // Reset the player position
+        this.transform.position = playerSpawn.transform.position;
+        SetGameState(true);
+        this.gameObject.SetActive(true);
     }
 }
