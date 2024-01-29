@@ -44,7 +44,7 @@ MonoBehaviour:
     autoImportArcore: 1
     thirdPartyARCoreClientDetected: 0
   playmode:
-    mRecordingPath: 
+    mRecordingPath: C:/Users/issam/git/TIA-Project/Assets/CameraSource/20231230_111421.mp4
     playModeType: 0
   webcam:
     renderTextureLayer: 30
