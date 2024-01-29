@@ -88,5 +88,8 @@ public class PlayerControls : MonoBehaviour
         this.transform.position = playerSpawn.transform.position;
         SetGameState(true);
         this.gameObject.SetActive(true);
+        // Remove all velocity from the player
+        rb.velocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
     }
 }
